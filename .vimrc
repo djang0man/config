@@ -1,3 +1,4 @@
+" Plugin repos
 " pathogen: https://github.com/tpope/vim-pathogen
 " syntastic: https://github.com/vim-syntastic/syntastic
 " vim-tmux-navigator: https://github.com/christoomey/vim-tmux-navigator
