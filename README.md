@@ -1,1 +1,1 @@
-# config
+# Bash and Vim Settings
