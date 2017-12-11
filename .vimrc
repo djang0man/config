@@ -39,6 +39,7 @@ set showcmd                           " Show size of visual selection
 
 set ruler
 set number
+set autoindent
 set cursorline
 set scrolloff=5
 set laststatus=2
