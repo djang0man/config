@@ -1,3 +1,3 @@
 Bash and Vim
 ===
-> Dot-file backups and boilerplates for customization and learning.
+> Dot-file backups for customization and learning.
