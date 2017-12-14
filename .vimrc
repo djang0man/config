@@ -18,7 +18,7 @@ highlight Comment cterm=italic gui=italic
 set autoread                          " Auto reload changed files
 set wildmenu                          " Tab autocomplete in command mode
 set backspace=indent,eol,start        " http://vi.stackexchange.com/a/2163
-set clipboard=unnamed                 " Clipboard support (OSX)
+" set clipboard=unnamed                 " Clipboard support (OSX)
 set laststatus=2                      " Show status line on startup
 set splitright                        " Open new splits to the right
 set splitbelow                        " Open new splits to the bottom
