@@ -44,6 +44,7 @@ set cursorline
 set scrolloff=5
 set laststatus=2
 set sidescrolloff=10
+set whichwrap+=<,>,[,]
 
 set nofoldenable
 set foldnestmax=5
