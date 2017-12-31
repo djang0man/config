@@ -67,7 +67,7 @@ set wildignore+=*.zip
 set wildignore+=*/vendor/bundle/*
 set wildignore+=*/node_modules/
 
-" Plugin settings
+" Plugins
 map <C-n> :NERDTreeToggle<CR>
 
 let g:ycm_autoclose_preview_window_after_insertion = 1
@@ -76,12 +76,19 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:slime_target="tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
 
-" Disabled for now
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+
+" see :h syntastic-loclist-callback
+function! SyntasticCheckHook(errors)
+  if !empty(a:errors)
+    let g:syntastic_loc_list_height = min([len(a:errors), 10])
+  endif
+endfunction
