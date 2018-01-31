@@ -7,6 +7,7 @@
 " YouCompleteMe: https://github.com/Valloric/YouCompleteMe
 " nerdcommenter https://github.com/scrooloose/nerdcommenter
 " nerdtree https://github.com/scrooloose/nerdtree
+" vim-flake8 https://github.com/nvie/vim-flake8
 
 execute pathogen#infect()
 
@@ -26,23 +27,22 @@ set nowrap                            " Don't wrap long lines
 set listchars=extends:→               " Show arrow if line continues rightwards
 set listchars+=precedes:←             " Show arrow if line continues leftwards
 set noerrorbells novisualbell         " Turn off visual and audible bells
-set expandtab shiftwidth=2 tabstop=2  " Two spaces for tabs everywhere
 set history=500
 set hlsearch                          " Highlight search results
 set ignorecase smartcase              " Search queries intelligently set case
 set incsearch                         " Show search results as you type
 set timeoutlen=1000 ttimeoutlen=0     " Remove timeout when hitting escape
 set showcmd                           " Show size of visual selection
+set expandtab shiftwidth=2 tabstop=2  " Two spaces for tabs everywhere
+
+au BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4 autoindent 
 
 set ruler
 set number
-set tabstop=2
-set shiftwidth=2
-set encoding=utf8
-set autoindent
 set cursorline
 set scrolloff=5
 set laststatus=2
+set encoding=utf8
 set sidescrolloff=10
 set whichwrap+=<,>,[,]
 
@@ -55,17 +55,19 @@ set foldnestmax=5
 set foldmethod=indent
 
 " Persistent undo
-set undodir=~/.vim/undo/
 set undofile
 set undolevels=1000
 set undoreload=10000
+set undodir=~/.vim/undo/
 
 " Ignored files/directories from autocomplete (and CtrlP)
-set wildignore+=*/tmp/*
 set wildignore+=*.so
 set wildignore+=*.zip
-set wildignore+=*/vendor/bundle/*
+set wildignore+=*/tmp/*
 set wildignore+=*/node_modules/
+set wildignore+=*/vendor/bundle/*
+
+let python_highlight_all=1
 
 " Plugins
 map <C-n> :NERDTreeToggle<CR>
@@ -76,14 +78,15 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:slime_target="tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
 
+set statusline+=%*
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_check_on_wq = 0
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_javascript_checkers = ['eslint']
 
 " see :h syntastic-loclist-callback
