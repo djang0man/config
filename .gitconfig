@@ -1,7 +1,5 @@
-# This is Git's per-user configuration file.
 [user]
-# Please adapt and uncomment the following lines:
-name = Stuart Kershaw
-email = stuartdkershaw@gmail.com
+  name = Stuart Kershaw
+  email = stuartdkershaw@gmail.com
 [core]
-	editor = "/Applications/MacVim.app/Contents/MacOS/Vim"
+  editor = "/Applications/MacVim.app/Contents/MacOS/Vim"
