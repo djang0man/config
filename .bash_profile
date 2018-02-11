@@ -1,6 +1,10 @@
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
+export PROJECT_HOME=~/PyProjects
+export WORKON_HOME=~/.virtualenvs
+source /Library/Frameworks/Python.framework/Versions/3.6/bin/virtualenvwrapper.sh
+
 export CLICOLOR=1
 alias ls='ls -GFh'
 export LSCOLORS=ExFxBxDxCxegedabagacad
@@ -17,4 +21,7 @@ export PATH
 # Setting PATH for Python 3.6
 # The original version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
+export PATH
+
+PATH="/Library/PostgreSQL/10/bin:${PATH}"
 export PATH
