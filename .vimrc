@@ -35,6 +35,7 @@ set timeoutlen=1000 ttimeoutlen=0     " Remove timeout when hitting escape
 set showcmd                           " Show size of visual selection
 set expandtab shiftwidth=2 tabstop=2  " Two spaces for tabs everywhere
 
+au BufNewFile,BufRead *.js setlocal tabstop=2 softtabstop=2 shiftwidth=2 autoindent 
 au BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4 autoindent 
 
 set ruler
