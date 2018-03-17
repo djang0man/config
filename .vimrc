@@ -36,7 +36,7 @@ set showcmd                           " Show size of visual selection
 set expandtab shiftwidth=2 tabstop=2  " Two spaces for tabs everywhere
 
 au BufNewFile,BufRead *.js setlocal tabstop=2 softtabstop=2 shiftwidth=2 autoindent 
-au BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4 autoindent 
+au BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4 autoindent colorcolumn=80 
 
 set ruler
 set number
