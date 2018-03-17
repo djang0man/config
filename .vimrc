@@ -68,7 +68,7 @@ set wildignore+=*/tmp/*
 set wildignore+=*/node_modules/
 set wildignore+=*/vendor/bundle/*
 
-let python_highlight_all=1
+" let python_highlight_all=1
 
 " Plugins
 map <C-n> :NERDTreeToggle<CR>
@@ -83,6 +83,10 @@ set statusline+=%*
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 
+" Flake8 for Vim
+" autocmd BufWritePost *.py call Flake8()
+" let g:flake8_cmd="~/.vim/bundle/vim-flake8"
+
 let g:syntastic_check_on_wq = 0
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -90,9 +94,14 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_javascript_checkers = ['eslint']
 
+" Disable syntastic python
+let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
+
 " see :h syntastic-loclist-callback
 function! SyntasticCheckHook(errors)
   if !empty(a:errors)
     let g:syntastic_loc_list_height = min([len(a:errors), 10])
   endif
 endfunction
+
+
