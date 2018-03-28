@@ -94,6 +94,10 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_javascript_checkers = ['eslint']
 
+" Open NERDTree directory on 'vim' without specified file
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
 " Disable syntastic python
 let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 
