@@ -84,8 +84,7 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 
 " Flake8 for Vim
-" autocmd BufWritePost *.py call Flake8()
-" let g:flake8_cmd="~/.vim/bundle/vim-flake8"
+autocmd BufWritePost *.py call Flake8()
 
 let g:syntastic_check_on_wq = 0
 let g:syntastic_auto_loc_list = 1
