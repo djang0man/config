@@ -84,7 +84,7 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 
 " Flake8 for Vim
-autocmd BufWritePost *.py call Flake8()
+" autocmd BufWritePost *.py call Flake8()
 
 let g:syntastic_check_on_wq = 0
 let g:syntastic_auto_loc_list = 1
@@ -98,7 +98,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Disable syntastic python
-let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
+" let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 
 " see :h syntastic-loclist-callback
 function! SyntasticCheckHook(errors)
