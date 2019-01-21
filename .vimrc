@@ -35,7 +35,9 @@ set timeoutlen=1000 ttimeoutlen=0     " Remove timeout when hitting escape
 set showcmd                           " Show size of visual selection
 set expandtab shiftwidth=2 tabstop=2  " Two spaces for tabs everywhere
 
+au BufNewFile,BufRead *.c setlocal tabstop=3 softtabstop=3 shiftwidth=3 autoindent
 au BufNewFile,BufRead *.js setlocal tabstop=2 softtabstop=2 shiftwidth=2 autoindent 
+au BufNewFile,BufRead *.php setlocal tabstop=4 softtabstop=4 shiftwidth=4 autoindent 
 au BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4 autoindent colorcolumn=80 
 
 set ruler
@@ -75,6 +77,7 @@ map <C-n> :NERDTreeToggle<CR>
 
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_confirm_extra_conf = 0
 
 let g:slime_target="tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
@@ -90,6 +93,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_c_checkers = ['cpp']
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_javascript_checkers = ['eslint']
 
@@ -106,5 +110,3 @@ function! SyntasticCheckHook(errors)
     let g:syntastic_loc_list_height = min([len(a:errors), 10])
   endif
 endfunction
-
-
