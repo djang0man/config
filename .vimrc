@@ -34,6 +34,7 @@ set incsearch                         " Show search results as you type
 set timeoutlen=1000 ttimeoutlen=0     " Remove timeout when hitting escape
 set showcmd                           " Show size of visual selection
 set expandtab shiftwidth=2 tabstop=2  " Two spaces for tabs everywhere
+set clipboard=unnamed                 " Enable pasting across windows
 
 au BufNewFile,BufRead *.c setlocal tabstop=3 softtabstop=3 shiftwidth=3 autoindent
 au BufNewFile,BufRead *.js setlocal tabstop=2 softtabstop=2 shiftwidth=2 autoindent 
